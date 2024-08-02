@@ -1,0 +1,54 @@
+package Student_Grade_Calculator;
+
+import java.util.*;
+
+public class GradeCalculator {
+	public static void main(String[] args) {
+
+		// scanner class
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("please enter the number of subjects : ");
+		// define the number of subjects
+		int size = sc.nextInt();
+		int arr[] = new int[size];
+	
+		String sub[]=new String[size];
+		// input section
+		for (int i = 0; i < size; i++) {
+			System.out.println("please enter the " + (i + 1) + " subject name : ");
+			String name=sc.next();
+			sub[i]=name;
+			System.out.println("please enter  " + sub[i ] + " subject number : ");
+			int subNum = sc.nextInt();
+			arr[i] = subNum;
+		}
+
+		// calculate the avegare marks
+		int sum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		System.out.println("Total Marks="+ sum);
+		int result =( sum / arr.length);
+		System.out.println("Average Percentage="+result+"%");
+		// calculation of grade
+		if (result >= 90 && result <= 100) {
+			System.out.println("O----->outstanding");
+		} else if (result >= 80 && result <= 89) {
+			System.out.println("E----->excellent");
+		} else if (result >= 70 && result <= 79) {
+			System.out.println("A----->very good");
+		} else if (result >= 60 && result <= 69) {
+			System.out.println("B----->Good");
+		} else if (result >= 50 && result <= 59) {
+			System.out.println("C----->Fair");
+		} else if (result >= 40 && result <= 49) {
+			System.out.println("D----->Below Average");
+		} else {
+			System.out.println("Fail");
+		}
+
+	}
+
+}
